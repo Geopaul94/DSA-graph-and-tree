@@ -86,20 +86,14 @@ class BST {
   }
 
   void preOrderDFS({Node? root}) {
-    
     if (root == null) {
       return;
     } else {
       print(root.value);
-      preOrderDFS(root:root.left);
-      preOrderDFS(root :root.right);
+      preOrderDFS(root: root.left);
+      preOrderDFS(root: root.right);
     }
   }
-
-
-
-
-
 
 
   void postOrderDFS([Node? root]) {
@@ -203,11 +197,8 @@ void main() {
   bst.max();
   bst.min();
 
-
-
-
-   print("Preorder traversal:");
-  bst.preOrderDFS(root:bst.root);
+  print("Preorder traversal:");
+  bst.preOrderDFS(root: bst.root);
   print("");
 
   // Printing Postorder traversal
