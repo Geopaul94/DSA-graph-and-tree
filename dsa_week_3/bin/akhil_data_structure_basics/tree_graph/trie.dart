@@ -2,7 +2,9 @@ class TrieNode {
   final Map<String, TrieNode> children;
   bool isEndOfWord;
 
-  TrieNode() : children = {}, isEndOfWord = false;
+  TrieNode()
+      : children = {},
+        isEndOfWord = false;
 }
 
 class Trie {
@@ -75,18 +77,18 @@ class Trie {
 
 void main() {
   Trie trie = Trie();
-  
+
   // Inserting words
   trie.insert("apple");
   trie.insert("banana");
-  
+
   // Searching for words
   print(trie.search("apple")); // true
-  print(trie.search("app"));   // false
-  
+  print(trie.search("app")); // false
+
   // Checking prefix
   print(trie.startsWith("ban")); // true
-  
+
   // Deleting a word
   trie.delete("apple");
   print(trie.search("apple")); // false

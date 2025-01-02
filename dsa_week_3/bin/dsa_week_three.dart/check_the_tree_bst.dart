@@ -23,7 +23,9 @@ double maxValue(Node? node) {
   double leftMax = maxValue(node.left);
   double rightMax = maxValue(node.right);
 
-  return value > leftMax ? (value > rightMax ? value : rightMax) : (leftMax > rightMax ? leftMax : rightMax);
+  return value > leftMax
+      ? (value > rightMax ? value : rightMax)
+      : (leftMax > rightMax ? leftMax : rightMax);
 }
 
 double minValue(Node? node) {
@@ -33,7 +35,9 @@ double minValue(Node? node) {
   double leftMin = minValue(node.left);
   double rightMin = minValue(node.right);
 
-  return value < leftMin ? (value < rightMin ? value : rightMin) : (leftMin < rightMin ? leftMin : rightMin);
+  return value < leftMin
+      ? (value < rightMin ? value : rightMin)
+      : (leftMin < rightMin ? leftMin : rightMin);
 }
 
 // Returns true if a binary tree is a binary search tree
@@ -41,7 +45,10 @@ int isBST(Node? node) {
   if (node == null) return 1;
 
   // false if the max of the left is > than us
-  if (node.left != null && maxValue(node.left) > node.data) return 0;
+  if (node.left != null && maxValue(node.left) > node.data) 
+  
+  {return 0;
+  }
 
   // false if the min of the right is <= than us
   if (node.right != null && minValue(node.right) < node.data) return 0;
@@ -57,14 +64,15 @@ int isBST(Node? node) {
 void main() {
   Node root = newNode(4);
   root.left = newNode(2);
-  root.right = newNode(5 );
-
+  root.right = newNode(5);
+root.left = newNode(50);
+  
   // root.right.left = newNode(7);
   root.left!.left = newNode(1);
   root.left!.right = newNode(3);
 
   // Function call
-  if (isBST(root) == 1)
+  if (isBST(root) == 4)
     print("Is BST");
   else
     print("Not a BST");

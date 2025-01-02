@@ -139,7 +139,7 @@ class BST {
     if (value > root.value) {
       return contains(root.right, value);
     }
-    return false; // This line was modified from the JavaScript version to remove the incorrect return statement.
+    return false;
   }
 }
 
@@ -188,7 +188,7 @@ void main() {
   bst1.insert(3);
   bst1.insert(1);
   bst1.insert(4);
-
+  print(isBST);
   print(isIdentical(bst.root, bst1.root));
   print(height(bst.root));
 }

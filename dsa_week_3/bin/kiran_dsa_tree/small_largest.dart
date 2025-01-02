@@ -48,8 +48,7 @@ class BST {
     }
   }
 
-  int min([Node? root]) {
-    root ??= this.root;
+  int min(Node? root) {
     if (root!.left == null) {
       return root.value;
     } else {
@@ -95,9 +94,7 @@ class BST {
     }
   }
 
-
-  void postOrderDFS([Node? root]) {
-    root ??= this.root;
+  void postOrderDFS(Node? root) {
     if (root != null) {
       postOrderDFS(root.left);
       postOrderDFS(root.right);
@@ -183,28 +180,32 @@ void main() {
   BST bst = BST();
   bst.insert(2);
   bst.insert(9);
-
+  bst.delete(2);
   bst.insert(3);
   bst.insert(1);
   bst.insert(4);
 
-  BST bst1 = BST();
-  bst1.insert(2);
-  bst1.insert(9);
-  bst1.insert(3);
-  bst1.insert(1);
-  bst1.insert(4);
+  // BST bst1 = BST();
+  // bst1.insert(2);
+  // bst1.insert(9);
+  // bst1.insert(3);
+  // bst1.insert(1);
+  // bst1.delete(2);
+  // bst1.insert(4);
   bst.max();
-  bst.min();
-
+  bst.min(bst.root);
+  bst.isEmpty();
   print("Preorder traversal:");
   bst.preOrderDFS(root: bst.root);
   print("");
 
+  bool result = isBST(BST());
+
+  print(result);
   // Printing Postorder traversal
-  // print("Postorder traversal:");
-  // bst.postOrderDFS();
-  // print("");
+  print("Postorder traversal:");
+  bst.postOrderDFS(bst.root);
+  print("");
 
   // // Printing Inorder traversal
   // print("Inorder traversal:");
